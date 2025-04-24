@@ -3,40 +3,36 @@ version: '3.8'
 services:
   user-service:
     build: ./user-service
-    image: student-portal_user-service:latest
+    image: student-portal_user-service:latest  # Custom image name
     ports:
       - "3001:3001"
     networks:
-      - ecommerce-network
+      - student-portal-network
 
-  course-service:
-    build: ./product-service
-    image: student-portal_product-service:latest
+  attendance-service:
+    build: ./attendance-service
+    image: student-portal_attendance-service:latest  # Custom image name
     ports:
       - "3002:3002"
     networks:
-      - ecommerce-network
+      - student-portal-network
 
-  attendence-service:
-    build: ./cart-service
-    image: student-portal_cart-service:latest
+  result-service:
+    build: ./result-service
+    image: student-portal_result-service:latest  # Custom image name
     ports:
       - "3003:3003"
     networks:
-      - ecommerce-network
-
-
-
- 
+      - student-portal-network
 
   frontend:
     build: ./frontend
-    image: student-portal_frontend:latest
+    image: student-portal_frontend:latest  # Custom image name
     ports:
       - "80:80"
     networks:
-      - ecommerce-network
+      - student-portal-network
 
 networks:
-  ecommerce-network:
+  student-portal-network:
     driver: bridge
