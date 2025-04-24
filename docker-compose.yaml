@@ -3,7 +3,7 @@ version: '3.8'
 services:
   user-service:
     build: ./user-service
-    image: student-portal_user-service:latest  # Custom image name
+
     ports:
       - "3001:3001"
     networks:
@@ -11,7 +11,7 @@ services:
 
   attendance-service:
     build: ./attendance-service
-    image: student-portal_attendance-service:latest  # Custom image name
+
     ports:
       - "3002:3002"
     networks:
@@ -19,7 +19,7 @@ services:
 
   result-service:
     build: ./result-service
-    image: student-portal_result-service:latest  # Custom image name
+
     ports:
       - "3003:3003"
     networks:
@@ -27,7 +27,7 @@ services:
 
   frontend:
     build: ./frontend
-    image: student-portal_frontend:latest  # Custom image name
+    
     ports:
       - "80:80"
     networks:
