@@ -9,7 +9,7 @@ services:
     networks:
       - ecommerce-network
 
-  product-service:
+  course-service:
     build: ./product-service
     image: student-portal_product-service:latest
     ports:
@@ -17,7 +17,7 @@ services:
     networks:
       - ecommerce-network
 
-  cart-service:
+  attendence-service:
     build: ./cart-service
     image: student-portal_cart-service:latest
     ports:
@@ -25,21 +25,9 @@ services:
     networks:
       - ecommerce-network
 
-  payment-service:
-    build: ./payment-service
-    image: student-portal_payment-service:latest
-    ports:
-      - "3004:3004"
-    networks:
-      - ecommerce-network
 
-  recommendation-service:
-    build: ./recommendation-service
-    image: student-portal_recommendation-service:latest
-    ports:
-      - "3005:3005"
-    networks:
-      - ecommerce-network
+
+ 
 
   frontend:
     build: ./frontend
