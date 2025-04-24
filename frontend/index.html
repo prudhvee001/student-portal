@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Portal</title>
+</head>
+<body>
+    <h1>Welcome to the Student Portal</h1>
+
+    <h2>User Info</h2>
+    <button onclick="fetchUserInfo()">Get User Info</button>
+    <div id="user-info"></div>
+
+    <h2>Course Info</h2>
+    <button onclick="fetchCourseInfo()">Get Course Info</button>
+    <div id="course-info"></div>
+
+    <h2>Attendance Info</h2>
+    <button onclick="fetchAttendanceInfo()">Get Attendance Info</button>
+    <div id="attendance-info"></div>
+
+    <script>
+        async function fetchUserInfo() {
+            const response = await fetch('http://localhost:5001/user/1');
+            const data = await response.json();
+            document.getElementById('user-info').innerHTML = JSON.stringify(data);
+        }
+
+        async function fetchCourseInfo() {
+            const response = await fetch('http://localhost:5002/course/101');
+            const data = await response.json();
+            document.getElementById('course-info').innerHTML = JSON.stringify(data);
+        }
+
+        async function fetchAttendanceInfo() {
+            const response = await fetch('http://localhost:5003/attendance/1');
+            const data = await response.json();
+            document.getElementById('attendance-info').innerHTML = JSON.stringify(data);
+        }
+    </script>
+</body>
+</html>
